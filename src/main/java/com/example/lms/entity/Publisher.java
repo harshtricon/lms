@@ -3,7 +3,8 @@ package com.example.lms.entity;
 
 import jakarta.persistence.*;
 
-import java.awt.print.Book;
+
+import java.util.Set;
 
 @Entity
 @Table(name="publisher")
