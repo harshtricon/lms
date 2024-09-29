@@ -1,8 +1,12 @@
 package com.example.lms.controller;
+import com.example.lms.dto.AuthorDTO;
 import com.example.lms.dto.AuthorSaveDTO;
+import com.example.lms.dto.AuthorUpdateDTO;
 import com.example.lms.service.AuthorService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
+
+import java.util.List;
 
 @RestController
 @CrossOrigin
@@ -20,7 +24,7 @@ public class AuthorController {
         return  "Added Successfully";
     }
 
-    @GetMapping(path = "/getAllAuthor")
+    @GetMapping(path = "/getAllAuthor")// jab endpoint ye aaega tab getall method call hoga
     public List<AuthorDTO> getAllAuthor()
     {
         List<AuthorDTO> allAuthors = authorService.getAllAuthor();
