@@ -12,4 +12,6 @@ public interface AuthorService {
     List<AuthorDTO> getAllAuthor();
 
     String updateAuthor(AuthorUpdateDTO authorUpdateDTO);
+
+    String deleteAuthor(int id);
 }

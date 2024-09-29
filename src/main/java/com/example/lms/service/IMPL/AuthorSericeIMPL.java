@@ -55,5 +55,18 @@ public class AuthorSericeIMPL implements AuthorService {
             }
             return null;
         }
+
+    @Override
+    public String deleteAuthor(int id) {
+        if(authorRepo.existsById(id))
+        {
+            authorRepo.deleteById(id);
+        }
+        else
+        {
+            System.out.println("ID Not Found");
+        }
+        return null;
     }
+}
 
