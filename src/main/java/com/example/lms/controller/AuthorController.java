@@ -9,7 +9,8 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("http://localhost:3000/")
+
 @RequestMapping("api/v1/author")
 public class AuthorController {
 
@@ -24,7 +25,7 @@ public class AuthorController {
         return  "Added Successfully";
     }
 
-    @GetMapping(path = "/getAllAuthor")// jab endpoint ye aaega tab getall method call hoga
+    @GetMapping(path = "/getAll")  // jab endpoint ye aaega tab getall method call hoga
     public List<AuthorDTO> getAllAuthor()
     {
         List<AuthorDTO> allAuthors = authorService.getAllAuthor();

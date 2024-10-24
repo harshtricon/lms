@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("http://localhost:3000/")
 @RequestMapping("api/v1/publisher")
 public class PublisherController {
 
@@ -24,7 +24,7 @@ public class PublisherController {
         return  "Added Successfully";
     }
 
-    @GetMapping(path = "/getAllPublisher")
+    @GetMapping(path = "/getAll")
     public List<PublisherDTO> getAllAuthor()
     {
         List<PublisherDTO> allPublishers = publisherService.getAllPublisher();

@@ -20,8 +20,7 @@ public class Borrow {
     private LocalDate borrowDate;
     @Column(name = "returnDate")
     private LocalDate returnDate;
-    @OneToMany(mappedBy = "borrow")
-    private Set<Fine> fines;
+
     public Borrow(int id, Book book, User user, LocalDate borrowDate, LocalDate returnDate) {
         this.id = id;
         this.book = book;

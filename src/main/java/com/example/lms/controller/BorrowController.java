@@ -10,7 +10,7 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @RestController
-@CrossOrigin
+@CrossOrigin("http://localhost:3000/")
 @RequestMapping("api/v1/borrow")
 public class BorrowController {
 
@@ -19,13 +19,13 @@ public class BorrowController {
     private BorrowService borrowService;
 
     @PostMapping(path = "/save")
-    public String saveBorroe(@RequestBody BorrowSaveDTO borrowSaveDTO)
+    public String saveBorrow(@RequestBody BorrowSaveDTO borrowSaveDTO)
     {
         String borrowBooks = borrowService.addBorrow(borrowSaveDTO);
         return  "Borrowed Successfully";
     }
 
-    @GetMapping(path = "/getAllBorrow")
+    @GetMapping(path = "/getAll")
     public List<BorrowDTO> getAllBorrow()
     {
         List<BorrowDTO> allborrow = borrowService.getAllBorrow();
